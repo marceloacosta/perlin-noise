@@ -33,7 +33,7 @@ for (var x = 0; x < width; x++){
     
      start += inc;
     fill(255);
-     ellipse(x-5,y,10,10);
+    text("pago facil",x-100,y);
     
     
 }
