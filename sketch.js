@@ -1,55 +1,52 @@
+// Declare global variables for increment and start
 var inc = 0.05;
 var start = 0;
 
+// Set up the canvas
 function setup() {
-    createCanvas(400,400)
+    createCanvas(400, 400);
 }
 
+// Main drawing function
 function draw() {
-    
-    
-    
+    // Set background color
     background(51);
+
+    // Set stroke color
     stroke(255);
+
+    // Do not fill the shape
     noFill();
+
+    // Begin drawing the shape
     beginShape();
+
+    // Initialize xoff variable
     var xoff = start;
-    
-for (var x = 0; x < width; x++){
-    stroke(255);
-    //var y = random(height);
-    
-    var y = noise(xoff) * height;
-   
-    vertex(x,y);
-    
-   
-    xoff += inc;
-    
-}
-    
 
+    // Loop through the width of the canvas
+    for (var x = 0; x < width; x++) {
+        stroke(255);
+
+        // Calculate the y value using Perlin noise
+        var y = noise(xoff) * height;
+
+        // Set the vertex of the shape
+        vertex(x, y);
+
+        // Increment xoff
+        xoff += inc;
+    }
+
+    // End drawing the shape
     endShape();
-    
-     start += inc;
+
+    // Increment start
+    start += inc;
+
+    // Set fill color for the text
     fill(255);
-    text("pago facil",x-100,y);
-    
-    
+
+    // Display text "pago facil" at the specified position
+    text("Hello Perlin", x - 100, y);
 }
-    
-
-    
-/*    var x = map(noise(xoff1),0,1,0,width);
-    var y = map(noise(xoff2),0,1,0,height);
-    xoff1 += 0.01;
-    xoff2 += 0.01;
-    
-    ellipse(x,y,24,24);
-    */
-    
-    
-    
-    
-
-
